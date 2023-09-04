@@ -20,7 +20,7 @@ class HeroViewCell: UICollectionViewCell {
         nameLabel.text = superhero.name
         guard let imageURL = URL(string: superhero.images.lg) else { return }
         
-        let url = URL(string: superhero.images.lg)
+        let url = imageURL
         let processor = DownsamplingImageProcessor(size: heroImage.bounds.size)
         heroImage.kf.indicatorType = .activity
         heroImage.kf.setImage(
@@ -32,14 +32,5 @@ class HeroViewCell: UICollectionViewCell {
                 .cacheOriginalImage
             ]
         )
-        {
-            result in
-            switch result {
-            case .success(let value):
-                print("Task done for: \(value.source.url?.lastPathComponent ?? "")")
-            case .failure(let error):
-                print("Job failed: \(error.localizedDescription)")
-            }
-        }
     }
 }
