@@ -12,6 +12,11 @@
 		1874A80F2AA5DF5600F3C0CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1874A80D2AA5DF5600F3C0CF /* Main.storyboard */; };
 		1874A8112AA5DF5700F3C0CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1874A8102AA5DF5700F3C0CF /* Assets.xcassets */; };
 		1874A8142AA5DF5800F3C0CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1874A8122AA5DF5800F3C0CF /* LaunchScreen.storyboard */; };
+		1874A81C2AA5E3D400F3C0CF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874A81B2AA5E3D400F3C0CF /* MainViewController.swift */; };
+		1874A8202AA5E40300F3C0CF /* HeroViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874A81F2AA5E40300F3C0CF /* HeroViewCell.swift */; };
+		1874A8222AA5E59B00F3C0CF /* Superhero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874A8212AA5E59B00F3C0CF /* Superhero.swift */; };
+		1874A8252AA5E77A00F3C0CF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1874A8242AA5E77A00F3C0CF /* Kingfisher */; };
+		1874A8272AA5E83E00F3C0CF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1874A8262AA5E83E00F3C0CF /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,10 @@
 		1874A8102AA5DF5700F3C0CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1874A8132AA5DF5800F3C0CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1874A8152AA5DF5800F3C0CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1874A81B2AA5E3D400F3C0CF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1874A81F2AA5E40300F3C0CF /* HeroViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroViewCell.swift; sourceTree = "<group>"; };
+		1874A8212AA5E59B00F3C0CF /* Superhero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Superhero.swift; sourceTree = "<group>"; };
+		1874A8262AA5E83E00F3C0CF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1874A8252AA5E77A00F3C0CF /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +67,10 @@
 				1874A8072AA5DF5600F3C0CF /* AppDelegate.swift */,
 				1874A8092AA5DF5600F3C0CF /* SceneDelegate.swift */,
 				1874A80D2AA5DF5600F3C0CF /* Main.storyboard */,
+				1874A81B2AA5E3D400F3C0CF /* MainViewController.swift */,
+				1874A81F2AA5E40300F3C0CF /* HeroViewCell.swift */,
+				1874A8262AA5E83E00F3C0CF /* NetworkManager.swift */,
+				1874A8212AA5E59B00F3C0CF /* Superhero.swift */,
 				1874A8102AA5DF5700F3C0CF /* Assets.xcassets */,
 				1874A8122AA5DF5800F3C0CF /* LaunchScreen.storyboard */,
 				1874A8152AA5DF5800F3C0CF /* Info.plist */,
@@ -80,6 +94,9 @@
 			dependencies = (
 			);
 			name = FindYourHero;
+			packageProductDependencies = (
+				1874A8242AA5E77A00F3C0CF /* Kingfisher */,
+			);
 			productName = FindYourHero;
 			productReference = 1874A8042AA5DF5600F3C0CF /* FindYourHero.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +125,9 @@
 				Base,
 			);
 			mainGroup = 1874A7FB2AA5DF5600F3C0CF;
+			packageReferences = (
+				1874A8232AA5E77A00F3C0CF /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 1874A8052AA5DF5600F3C0CF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -135,7 +155,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1874A8272AA5E83E00F3C0CF /* NetworkManager.swift in Sources */,
+				1874A8222AA5E59B00F3C0CF /* Superhero.swift in Sources */,
+				1874A81C2AA5E3D400F3C0CF /* MainViewController.swift in Sources */,
 				1874A8082AA5DF5600F3C0CF /* AppDelegate.swift in Sources */,
+				1874A8202AA5E40300F3C0CF /* HeroViewCell.swift in Sources */,
 				1874A80A2AA5DF5600F3C0CF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +384,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1874A8232AA5E77A00F3C0CF /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1874A8242AA5E77A00F3C0CF /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1874A8232AA5E77A00F3C0CF /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1874A7FC2AA5DF5600F3C0CF /* Project object */;
 }
