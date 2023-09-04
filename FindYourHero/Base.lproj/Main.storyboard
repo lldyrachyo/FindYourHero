@@ -11,7 +11,7 @@
         <!--Find Your Heho-->
         <scene sceneID="GOC-Fh-eWq">
             <objects>
-                <collectionViewController id="Zpp-Lf-IH0" sceneMemberID="viewController">
+                <collectionViewController id="Zpp-Lf-IH0" customClass="MainViewController" customModule="FindYourHero" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Ipz-Aj-VkW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="heroCell" id="iUk-6y-hq9">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="heroCell" id="iUk-6y-hq9" customClass="HeroViewCell" customModule="FindYourHero" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="125" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vt7-gT-cmw">
@@ -53,6 +53,10 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="125" height="200"/>
+                                <connections>
+                                    <outlet property="heroImage" destination="xsD-6N-HWH" id="oyo-iY-wBh"/>
+                                    <outlet property="nameLabel" destination="ttL-Xf-TaT" id="5Ha-cT-PrV"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
