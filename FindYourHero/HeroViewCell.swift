@@ -15,38 +15,31 @@ class HeroViewCell: UICollectionViewCell {
         }
     }
     @IBOutlet var nameLabel: UILabel!
-    
-    private var activityIndicator: UIActivityIndicatorView?
-//    private let networkManager
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        activityIndicator = showSpinner(in: heroImage)
-    }
-    
+
     func configure(with superhero: Superhero) {
         nameLabel.text = superhero.name
         guard let imageURL = URL(string: superhero.images.lg) else { return }
         
-        heroImage.kf.setImage(with: imageURL) { [weak self] result in
+        let url = URL(string: superhero.images.lg)
+        let processor = DownsamplingImageProcessor(size: heroImage.bounds.size)
+        heroImage.kf.indicatorType = .activity
+        heroImage.kf.setImage(
+            with: url,
+            options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ]
+        )
+        {
+            result in
             switch result {
-            case .success(_):
-                self?.activityIndicator?.stopAnimating()
+            case .success(let value):
+                print("Task done for: \(value.source.url?.lastPathComponent ?? "")")
             case .failure(let error):
-                print(error)
+                print("Job failed: \(error.localizedDescription)")
             }
         }
-    }
-    
-    private func showSpinner(in view: UIView) -> UIActivityIndicatorView {
-        let activityIndicator = UIActivityIndicatorView(style: .medium)
-        
-        activityIndicator.color = .white
-        activityIndicator.startAnimating()
-        activityIndicator.center = view.center
-        activityIndicator.hidesWhenStopped = true
-        
-        view.addSubview(activityIndicator)
-        return activityIndicator
     }
 }
